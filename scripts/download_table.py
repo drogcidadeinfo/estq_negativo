@@ -53,6 +53,7 @@ try:
     # wait til page loads completely
     WebDriverWait(driver, 10).until(lambda x: x.execute_script("return document.readyState === 'complete'"))
 
+    driver.find_element(By.TAG_NAME, "body").send_keys(Keys.F11)
     
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "sideMenuSearch")))
     driver.find_element(By.ID, "sideMenuSearch").send_keys("Saldo em Estoque")
